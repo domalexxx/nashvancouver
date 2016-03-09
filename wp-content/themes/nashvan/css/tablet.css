@@ -1,0 +1,68 @@
+html, body {
+  overflow-x:hidden 
+}
+.col-sm-5{
+	width: 41.66666667% !important;
+}
+.catalog > div{
+	width: 100% !important;
+}
+.events .event{
+	width: 100% !important;
+}
+.events .event img{
+	width: 100% !important;
+}
+.events .event + div{
+	width: 100% !important;
+	margin: 0 !important;
+}
+.events .event + div > div.col-sm-12{
+	padding: 0 !important;
+}
+.home .essbfc-counter-container{
+	/*width: 32% !important;*/
+	right: 0 !important;
+}
+.all-news .article-top .col-sm-6{
+	width: 48.7% !important;
+	margin-right: 18px !important;
+}
+.all-news .article-top .col-sm-6:nth-child(n+1) img{
+	height: 100% !important;
+}
+.all-news .article-top .col-sm-6:nth-child(n+1) a{
+		height: 200px !important;
+}
+.all-news .article-top .col-sm-6:nth-child(3){
+	margin-right: 0 !important;
+}
+.article-top .wrapper ~ div:nth-child(3n-2){
+	margin-right: 0 !important;
+}
+.all-news .article-top .col-sm-4{
+	margin-right: 27px !important;
+}
+.all-news .article-top .col-sm-12{
+	width: 100% !important;
+}
+header .navbar .navbar-nav li{
+	margin-left: 13px !important;
+}
+header #navbar2{
+	padding-right: 0;
+}
+header .navbar.navbar-main li a{
+	font-size: 10px !important;
+}
+header #menu-top{
+	margin-left: -35px !important;
+}
+header #menu-top li{
+	margin-left: 50px !important;
+}
+form.navbar-form.navbar-left{
+	float: none !important;
+	width: 298px !important;
+	margin: auto !important;
+}

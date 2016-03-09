@@ -1,0 +1,246 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Featured Galleries"
+msgstr ""
+
+#. Short description.
+msgid "Do you like giving posts a Featured Image? Try out a Featured Gallery. It&#039;s like a Featured Images ... except as many images as you want."
+msgstr ""
+
+#. Screenshot description.
+msgid "Initial metabox, no images in the gallery."
+msgstr ""
+
+#. Screenshot description.
+msgid "Metabox with images selected and added."
+msgstr ""
+
+#. Found in description header.
+msgid "Hello Theme Developers!"
+msgstr ""
+
+#. Found in description header.
+msgid "--Instructions--"
+msgstr ""
+
+#. Found in description header.
+msgid "--Examples--"
+msgstr ""
+
+#. Found in description header.
+msgid "Adding Featured Galleries to a Custom Post Type"
+msgstr ""
+
+#. Found in description header.
+msgid "Want to Help?"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Have you ever added a Featured Image to a post and thought to yourself, 'I wish I could add more than one image this way'? Well, now you can. \"Featured Galleries\" mirrors the Featured Images functionality of WordPress. The only difference is that posts get an entire gallery rather than just a single image. These galleries behave almost exactly like Featured Images, and make use of  WordPress's built in Media Manager. Users can select images, define the order, and save the gallery, all through a simple drag-n-drop interface."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Note</strong>: This is not a plugin which will add galleries to your website. This is for theme developers. It handles the backend interface for creating featured galleries, and storing them. You will still need to build a gallery on your page templates."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Just like with Featured Images themes will need to call a Featured Gallery in any template file where the Featured Gallery should appear. I've tried to make this as intuitive as possible."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Just like WordPress comes with <code>get_post_thumbnail_id()</code> built-in, you can use <code>get_post_gallery_ids()</code> to call the Featured Gallery. It needs the post's ID, and will return a PHP array with the ID's of all images in the post's Featured Gallery. Additionally you can send a second argument, \"string\", which will cause the function to return a comma-delimited string instead of an array."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "This example pulls the entire Featured Gallery, as an array, then loops through to display each as an <code>img</code>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can additionally request a comma-delimited string, instead of an array."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Finally, you may want to just grab the first image of the gallery. You can do this by specifying the number of images to return. The default is <code>-1</code>, which returns all. Setting this to <code>1</code> instead, as shown below, will get you only one image."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "I've included a hook to allow you to easily integrate featured galleries into a custom post type. In your theme <code>functions.php</code> file, simply add this:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "I'd love some help with internationalization. I'm not sure how to do that. Also, if anyone wants to take a look at <code>admin.js</code>, which calls up the media manager, I feel like the way that I open it to the gallery-edit state could be improved. (Opens to<code>featured-gallery</code> state, plugs in pre-selected images, then changes state to <code>gallery-edit</code>, and plugs in pre-selected images. Couldn't get selection to transfer, so there's a weird flash as it propagates.)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the <code>featured-galleries</code> folder to the <code>/wp-content/plugins/</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Go to the 'Plugins' menu in WordPress, find 'Featured Galleries' in the list, and select 'Activate'."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Go to the 'Plugins' menu in WordPress, click on the 'Add New' button."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Search for 'Featured Galleries'. Click 'Install Now'."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Return to the 'Plugins' menu in WordPress, find 'Featured Galleries' in the list, and select 'Activate'."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "There are two ways to install this plugin."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Manual:"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Through the WP Repository:"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Accidentally put the version of 1.4.5 when I meant to use 1.4.4, but in change log used correct version. This bump to 1.5 restores consistency."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tested with WP 4.4 and bumped up compatibility."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bugfix: If <code>get_post_gallery_ids()</code> was called on post with empty Featured Gallery, using an array return (the default), an array containing one string (a comma) was returned instead of an empty array."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bugfix: Undefined variable <code>$oldfix</code> when running post-MP6 versions of WordPress (3.9 and over). Props Joshuadnelson."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "WordPress 4.2 compatibility bump."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updating readme to add example code for custom post types."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "WordPress 4.1 compatibility bump."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bugfix: Margin difference between buttons on left and right in media model."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bugfix: Button type and text change didn't fire when Media model defaults to upload instead of to media library."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed issue where the scripts required to open the Media Manager might notbe enqueued."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added internationalization and German translation. Props to Drivingralle."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Formatting fixes to better match WordPress PHP best practices. Props Drivingralle."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes a typo in the readme.txt file."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "As reported in suppor thread, error messages were being thrown in WP DEBUG mode, when trying to save things unrelated to plugin. Fixes those errors."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "More bug fixes for 3.9 and 3.5 - 3.7, to bring everything into line visually in all versions that use the media manager."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bugfix, CSS background positioning missing on delete images icons in WP 3.5 - 3.7."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added compatibility for WordPress 3.9 (Had to rearrange the javascript slightly)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved compatibility for WordPress 3.5 - 3.7 by using built in icon images instead of Dashicons in those versions."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed inconsistent Markup."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Overhauled readme.txt to include implementation instructions and examples."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Slight bug was introduced in 1.1.3, <strong>get_post_gallery_ids()</strong> won't work."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added a new argument to <strong>get_post_gallery_ids()</strong>, allowing it to return only the first image in the gallery."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor bug fix update. If used opened, closed, and then reopened the gallery selector, the back button would appear incorrectly. Skipping 1.1.1 because that is a silly version number."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Completely screwed up commits for 1.0.0 and 1.0.1, and copied the entire folder instead of trunk. Fixed now."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor update, fixed a CSS bug where buttons were incorrectly small on mobile (&lt; 783px) screens."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "First public version. Added support for WP's Preview Changes functionality. Accomplished this be using two pieces of metadata."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Initial test version sent to WP for submission."
+msgstr ""
+
+#. Found in faq header.
+msgid "What is the point of this?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Will it be improved?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Can I place the metabox in both the sidebar and under the editor?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Can I add a featured gallery to my custom post type?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "I was tasked to update a Featured Projects page for a client website. Projects were a custom post type, and the page displaying them used a special WP_Query. Each Project had a featured image. The client wanted each to have several images that could be clicked through with arrows. I couldn't find an easy way to accomplish this, so I built it from scratch. A friend suggested I abstract it into a plugin to share."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Possibly. Do you have any suggestions? What I'd really like to see is the functionality adopted into the core. We have featured images, why not featured galleries?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes! Turns out there is CSS that lets me changes the behavor of the preview thumbnails depending on the position, so it should look good both in both positions."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Why yes you can! You don't even have to edit the plugin to do so. There are details on how to do this in the Instructions."
+msgstr ""

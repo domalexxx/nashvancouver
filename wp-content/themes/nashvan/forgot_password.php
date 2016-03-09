@@ -1,0 +1,132 @@
+<?php
+ob_start();
+
+include_once('../../../wp-config.php');
+include_once('../../../wp-load.php');
+
+if( $_REQUEST['password_email'] ) {
+
+	$password_email = $_REQUEST['password_email'];
+
+	$user_data = get_user_by( 'email', trim( $password_email ) );
+	$user_login = $user_data->user_login;
+	$user_email = $user_data->user_email;
+	$key = get_password_reset_key( $user_data );
+	$link = network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login');
+	$subject = "NashVancouver.com - Восстановление пароля!";
+	$subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+	
+	$headers[] = 'Content-Type: text/html; charset=UTF-8' . '\r\n';
+	$headers[] = 'From: NashVancouver.com <info@nashvancouver.com>';
+	$message = '<html>
+<head>
+	<title>Спасибо за регистрацию</title>
+	<meta charset="UTF-8">
+</head>
+<body style="margin: 0; padding: 0; font-family: \'Arial\';">
+	<table style="background: #044b81; width: 100%;">
+		<tr>
+			<td>
+				<table style="width: 600px; margin: auto;">
+					<tr>
+						<td style="text-align: center;"><a href="#" style="color: #fff; text-decoration: none; font-size: 12px;">О Ванкувере</a></td>
+						<td style="text-align: center;"><a href="#" style="color: #fff; text-decoration: none; font-size: 12px;">Блоги</a></td>
+						<td style="text-align: center;"><a href="#" style="color: #fff; text-decoration: none; font-size: 12px;">Поддержите проект</a></td>
+						<td style="text-align: center;"><a href="#" style="color: #fff; text-decoration: none; font-size: 12px;">Связь с нами</a></td>
+						<td style="text-align: center;"><a href="#" style="color: #fff; text-decoration: none; font-size: 12px;">Реклама</a></td>
+						<td style="text-align: center;"><a href="#" style="color: #fff; text-decoration: none; font-size: 12px;">FAQ</a></td>
+						<td style="text-align: center;"><a href="#" style="color: #fff; text-decoration: none; font-size: 12px; background:#306ea9; padding: 3px 10px; border-radius: 3px;">Вход в личный кабинет</a></td>
+					</tr>
+				</table>	
+			</td>
+		</tr>
+	</table>
+	<table style="text-align: center; background:#bbdef9; width: 100%;">
+		<tr>
+			<td><h1 style="font-family: \'Times New Roman\'; color: #044b81; font-size: 30px; margin:28px auto 0;">NashVancouver.com</h1></td>
+		</tr>
+		<tr>
+			<td><h2 style="font-family: \'Times New Roman\'; color: #044b81; font-size: 16px; margin: 0; padding-bottom: 32px;">Ваш главный источник информации о жизни в Британской Колумбии!</h2></td>
+		</tr>
+	</table>
+	<table style="background: #306ea9; width: 100%;">
+		<tr>
+			<td>
+				<table style="width: 600px; margin: auto;">
+					<tr>
+						<td style="text-align: center;"><a href="" style="color: #fff; text-decoration: none; font-size: 12px; font-weight: ">Новости</a></td>
+						<td style="text-align: center;"><a href="" style="color: #fff; text-decoration: none; font-size: 12px; font-weight: ">Доска объявлений</a></td>
+						<td style="text-align: center;"><a href="" style="color: #fff; text-decoration: none; font-size: 12px; font-weight: ">Бизнес справочник</a></td>
+						<td style="text-align: center;"><a href="" style="color: #fff; text-decoration: none; font-size: 12px; font-weight: ">Афиша</a></td>
+						<td style="text-align: center;"><a href="" style="color: #fff; text-decoration: none; font-size: 12px; font-weight: ">Про иммиграцию</a></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table style="width: 600px; margin:20px auto 20px; border: 1px solid #bbdef9; border-radius: 10px; padding-left: 25px; font-size: 14px; color: #262626;">
+		<tr>
+			<td colspan="2"><h3 style="color: #103864; font-weight: 700; font-size: 24px; text-align: center; margin-bottom: 10px; padding-top:20px;">Восстановление пароля</h3></td>
+		</tr>
+		<tr>
+			<td colspan="2"><p style="line-height: 25px;">Кто-то отправил запрос на восстановление пароля на сайте NashVancouver.com, если это сделали вы, то перейдите по ссылке ниже:</p></td>
+		</tr>
+		<tr>
+			<td colspan="2"><p style="color: #4b4b4b;text-align: center; padding:10px 0;">Для восстановления пароля перейдите по кнопке</p></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;"><a href="'.$link.'" style="text-decoration:none; background: #044b81; padding: 12px 28px; color: #fff; font-size: 16px; font-weight: 700; border-radius: 5px; display: inline-block;">Восстановить пароль</a></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<p style="line-height: 25px; padding:20px 0;">Если у Вас возникнут вопросы пишите и мы постараемся помочь вам 
+в самое ближайшее время !</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><p style="line-height: 25px;">С уважением<br>
+Администрация сайта<br>
+<a href="" style="color: #55a8e6;">NashVancouver.com</a>
+</p></td>
+		</tr>
+	</table>
+	<table style="width:100%; text-align: center;border-collapse: collapse;">
+		<tr style="background: #e2f0fe;">
+			<td style="padding:15px 0;">
+				<p style="color:#044b81; font-size: 14px;">Просоединяйтесь к нам в сетях</p>
+				<ul style="padding:0;">
+					<li style="display:inline-block;"><a href="http://www.facebook.com/nashvancouver"><img src="http://nashvancouver.com/wp-content/themes/nashvan/images/facebook-social.png"></a></li>
+					<li style="display:inline-block;"><a href="https://www.youtube.com/channel/UCTqvuWHlbvlqxNaVTFWL5pQ"><img src="http://nashvancouver.com/wp-content/themes/nashvan/images/youtube-social.png"></a></li>
+					<li style="display:inline-block;"><a href=""><img src="http://nashvancouver.com/wp-content/themes/nashvan/images/twitter-social.png"></a></li>
+				</ul>
+			<p style="color: #103864;"><strong>NASHVANCOUVER.COM</strong></p>
+			</td>
+		</tr>
+		<tr style="background: #d5e9fd;">
+			<td style="padding: 10px 0; color: #6ca9d8; font:12px \'Arial\';">Для того чтобы отписаться от новостей с нашего сайта <a href="#">перейдите сюда</a></td>
+		</tr>
+	</table>
+</body>
+</html>';
+	// $message = __('Someone has requested a password reset for the following account:') . "\r\n\r\n";
+	// $message .= network_home_url( '/' ) . "\r\n\r\n";
+	// $message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
+	// $message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "\r\n\r\n";
+	// $message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
+	// $message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . ">\r\n";
+
+	// $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
+	// $title = sprintf( __('[%s] Password Reset'), $blogname );
+	// $title = apply_filters( 'retrieve_password_title', $title, $user_login, $user_data );
+
+	// $message = apply_filters( 'retrieve_password_message', $message, $key, $user_login, $user_data );
+
+	if ( $message && !wp_mail($user_email, $subject, $message, $headers) ) {
+		echo 'The email could not be sent.';
+		die;
+	} else {
+		echo "1";
+		die;
+	}
+}
+?>

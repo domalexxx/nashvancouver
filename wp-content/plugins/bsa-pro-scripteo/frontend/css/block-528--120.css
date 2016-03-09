@@ -1,0 +1,52 @@
+
+/* -- START -- Reset */
+#bsa-block-528--120 h3,
+#bsa-block-528--120 a,
+#bsa-block-528--120 img,
+#bsa-block-528--120 span,
+#bsa-block-528--120 p {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	text-decoration: none;
+	line-height: 1.25;
+}
+/* -- END -- Reset */
+
+
+/* -- START -- TEMPLATE */
+#bsa-block-528--120.bsaProContainer .bsaProItem,
+#bsa-block-528--120 .bsaProItemInner__thumb,
+#bsa-block-528--120 .bsaProAnimateThumb {
+	max-width: 528px;
+	max-height: 120px;
+}
+
+#bsa-block-528--120 .bsaProAnimateThumb {
+	position: relative;
+	width: 100%;
+	height: 120px;
+}
+
+#bsa-block-528--120 .bsaProAnimateThumb:before{
+	content: "";
+	display: block;
+}
+
+#bsa-block-528--120 .bsaProItemInner__img {
+	position:  absolute;
+	width: 100%;
+	max-height: 120px;
+	height: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+/* -- END -- TEMPLATE */
